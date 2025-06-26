@@ -1,0 +1,19 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=file:./dev.db
+      - NEXTAUTH_URL=http://localhost:3000
+      - NEXTAUTH_SECRET=your-production-secret-key-change-this
+    volumes:
+      - ./prisma/dev.db:/app/prisma/dev.db
+      - ./uploads:/app/public/uploads
+    command: >
+      sh -c "npx prisma db push --accept-data-loss &&
+             node server.js"
+    restart: unless-stopped

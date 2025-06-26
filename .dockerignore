@@ -1,0 +1,37 @@
+# Dépendances
+node_modules
+npm-debug.log*
+
+# Fichiers de développement
+.next
+.git
+.gitignore
+README.md
+
+# Fichiers d'environnement
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs
+*.log
+
+# Base de données de développement
+prisma/dev.db
+prisma/dev.db-journal
+
+# Fichiers temporaires
+.DS_Store
+*.tgz
+*.tar.gz
+
+# IDE
+.vscode
+.idea
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
